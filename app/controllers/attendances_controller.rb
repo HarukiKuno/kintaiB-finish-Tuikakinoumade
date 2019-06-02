@@ -24,4 +24,19 @@ class AttendancesController < ApplicationController
     @last_day = @first_day.end_of_month
     @dates = user_attendances_month_date
     end
+    
+    def update
+        @user = User.find(params[:id])
+        attendances_params.each do |id, item|
+            attendance = Attendance.find(id)
+            attendance.update_attributes(item)
+    end
+    flash[:success] = '勤怠情報を更新しました。'
+    redirect_to user_url(@user, params:{first_day: params[:date]})
+    end
+    
+    private
+    def attendances_params
+        params.permit(attendances: [:started_at, :finished_at, :note])[:attendances]
+    end
 end
