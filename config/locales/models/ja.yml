@@ -14,4 +14,5 @@ ja:
         salon_id: サロン
         password: パスワード
         password_confirmation: パスワード確認
-        
+        basic_time: 指定勤務時間
+        work_time: 基本勤務時間
