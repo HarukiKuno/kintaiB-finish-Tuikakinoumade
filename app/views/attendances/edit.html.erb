@@ -26,8 +26,25 @@
              <font color = "black"><%= %w{日 月 火 水 木 金 土}[day.worked_on.wday] %></font>
            <% end %>
           </td>
-            <td><%= af.time_field :started_at, class: "form-control" %></td>
-            <td><%= af.time_field :finished_at, class: "form-control" %></td>
+            
+            <td>
+              <% if day.worked_on <= Date.current %>
+              <%= af.time_field :started_at, class: "form-control"%>
+              <% else %>
+              <%= af.time_field :started_at, class: "form-control", :readonly => true %>
+              <% end %>
+            </td>
+              
+            <td>
+              <% if day.worked_on <= Date.current %>
+              <%= af.time_field :finished_at, class: "form-control" %>
+              <% else %>
+              <%= af.time_field :finished_at, class: "form-control", :readonly => true %>
+              <% end %>
+            </td>
+            
+            
+            
             <td>
               <% if day.started_at.present? && day.finished_at.present? %>
               <%= working_times(day.started_at, day.finished_at) %>
