@@ -1,5 +1,8 @@
 class AttendancesController < ApplicationController
     
+before_action :logged_in_user, only: [:index, :edit, :update, :show]
+before_action :correct_user,   only: [:edit, :update, :show]
+    
     
     def create
         @user = User.find(params[:user_id])
@@ -43,5 +46,20 @@ class AttendancesController < ApplicationController
     private
     def attendances_params
         params.permit(attendances: [:started_at, :finished_at, :note])[:attendances]
+    end
+    
+    
+    def logged_in_user
+      unless logged_in?
+        store_location
+        flash[:danger] = "ログインしてください。"
+        redirect_to login_url
+      end
+    end
+
+    # 正しいユーザーかどうか確認
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
     end
 end
