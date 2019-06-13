@@ -13,7 +13,7 @@ module AttendancesHelper
     
     
   def working_times(started_at, finished_at)
-    format("%.2f", (((finished_at - started_at) / 60) / 60.0))
+    format("%.2f", (((finished_at.floor_to(15.minutes) - started_at.floor_to(15.minutes)) / 60) / 60.0))
   end
   
   
