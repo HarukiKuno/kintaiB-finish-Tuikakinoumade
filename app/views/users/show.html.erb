@@ -8,6 +8,7 @@
         &emsp;<%= @first_day.to_s(:year_month) %>　時間管理表&emsp;
         <%= link_to "→", user_path(params: {id: @user.id, first_day: @first_day.next_month }),
                          class: "btn btn-xs btn-primary" %>
+                         
       </td>
       <td>指定勤務時間　<%= format_basic_time(@user.work_time) %></td>
       <td>基本時間　<%= format_basic_time(@user.basic_time) %></td>
