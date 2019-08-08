@@ -20,12 +20,14 @@
       <td>初日　<%= @first_day.to_s(:date) %></td>
     </tr>
     <tr>
+      
       <td>所属：<%= @user.department.present? ? @user.department : "未設定" %></td>
       <td>氏名：<%= @user.name %></td>
       <td>コード</td>
       <td>5555</td>
       <td>出勤日数：<%= @worked_sum %>日</td>
       <td>締日　<%= @last_day.to_s(:date) %></td>
+      
     </tr>
   </table>
 　<br>
@@ -142,9 +144,30 @@
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
+        <td>所属長承認　未
+          
+          
+<form method="post" action="example.cgi">
+
+<p>
+<select name="example1">
+
+<option value="サンプル1">上長A</option>
+<option value="サンプル2">上長B</option>
+</select>
+</p>
+<p><%= link_to "申請", edit_attendances_path(@user, @first_day), class: "btn btn-primary" %></p>
+</form>
+
+</td>
         
       </tr>
     </tfoot>
   </table>
 </div>
+
+
+
+
+
+   
