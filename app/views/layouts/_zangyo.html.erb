@@ -46,11 +46,48 @@
           
          
           
+ <!-- 終了予定時間-->
+          <td>
+            
+            
+      <%= form_for(@user, url: update_basic_info_path(params: {id: @user.id})) do |f| %>
+     
 
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+    
+      <%= f.time_field :basic_time, class: 'form-control' %>
+
+    <% end %>
+            
+            
+          </td>
+          
+          
+          
+          <!-- チェックボックス-->
+          
+          <td> <label><input type="checkbox" name="checkbox">　</label></td>
+          
+          
+          <td>
+           
+   
+    <div>
+      <input type="text">
+    </div>
+ 
+          </td>
+          <td>
+            
+            
+            <p>
+<select name="example1">
+
+<option value="サンプル1">上長A</option>
+<option value="サンプル2">上長B</option>
+</select>
+</p>
+            
+          </td>
         </tr>
      
     </tbody>
