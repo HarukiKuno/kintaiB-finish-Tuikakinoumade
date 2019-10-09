@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   patch 'update-basic-info',  to: 'users#update_basic_info'
   get 'users/:id/attendances/:date/edit', to: 'attendances#edit', as: :edit_attendances
   patch 'users/:id/attendances/:date/update', to: 'attendances#update', as: :update_attendances
+  get 'users/:id/edit_basic_info1', to: 'users#edit_basic_info1', as: :edit_basic_info1_user
+  patch 'users/:id/update_basic_info1', to: 'users#update_basic_info1', as: :update_basic_info1_user
+  
+  
   resources :users do
+    
     resources :attendances, only: :create
   end
 end
