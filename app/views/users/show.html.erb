@@ -77,8 +77,15 @@
     <tbody>
       <% @dates.each do |day| %>
         <tr>
+          
+          
+          
+          
          
-          <%= render 'layouts/zangyo' %>
+          <td>
+			<%= link_to "残業申請", edit_basic_info1_user_path(@user, params:{ day: day.worked_on, youbi: %w{日 月 火 水 木 金 土}[day.worked_on.wday] }), remote: true, class: "btn btn-primary" %>
+	
+          </td>
           <td><%= day.worked_on.to_s(:date) %></td>
                     <td><% if day.worked_on.wday == 6 %>
            <font color = "blue"><%= %w{日 月 火 水 木 金 土}[day.worked_on.wday] %></font>
@@ -169,5 +176,7 @@
 
 
 
+<!--モーダルウインドウ表示-->
+<div id="edit-basic-info1" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
 
    

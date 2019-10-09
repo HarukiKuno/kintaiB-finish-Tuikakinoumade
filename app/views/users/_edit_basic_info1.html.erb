@@ -1,0 +1,99 @@
+
+<div class="modal-dialog modal-lg modal-dialog-center">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <h1 class="modal-title">残業申請</h1>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          
+          
+          <table class = "table-bordered table-striped table-condensed">
+    <thead>
+      <tr> <!--rowspan:縦結合、colspan：横結合-->
+        
+        
+        <th rowspan = "3", width="100">日付</th>
+        <th rowspan = "3", width="100">曜日</th>
+        <th rowspan = "3", width="100">終了予定時間</th>
+        <th rowspan = "3", width="100">翌日</th>
+        <th rowspan = "3", width="100">業務処理内容</th>
+        <th rowspan = "3", width="100">指示者確認㊞</th>
+       
+      </tr>
+      
+
+      <tbody>
+     
+        <tr>
+        
+         <!-- 日付 -->
+          <td><%= l(@day, format: :short) %></td>
+          
+          <td><%= @youbi %>  </td>
+          
+          
+         
+          
+ <!-- 終了予定時間-->
+          <td>
+            
+            
+
+            
+            
+          </td>
+          
+          
+          
+          <!-- チェックボックス-->
+          
+          <td> <label><input type="checkbox" name="checkbox">　</label></td>
+          
+          
+          <td>
+           
+   
+    <div>
+      <input type="text">
+    </div>
+ 
+          </td>
+          <td>
+            
+            
+            <p>
+<select name="example1">
+
+<option value="サンプル1">上長A</option>
+<option value="サンプル2">上長B</option>
+</select>
+</p>
+            
+          </td>
+        </tr>
+     
+    </tbody>
+      
+      
+    </thead>
+    </table>
+  
+          
+
+            <div class="center">
+              
+              <button type="button" class="btn btn-default btn-<%= yield(:class_text) %>" data-dismiss="modal">
+                キャンセル
+              </button>
+            </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

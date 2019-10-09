@@ -75,6 +75,16 @@ class UsersController < ApplicationController
     render 'edit_basic_info'
   end
  end
+ 
+ 
+ # 残業申請
+  def edit_basic_info1
+    @day = Date.parse(params[:day])
+    @youbi = %w(日 月 火 水 木 金 土)[@day.wday]
+  end
+  
+  def update_basic_info1
+  end
 
   private
 
