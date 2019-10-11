@@ -94,6 +94,12 @@ class UsersController < ApplicationController
   
   def update_basic_info1
   end
+  
+  
+  # 出勤社員一覧
+  def syain
+    
+  end
 
   private
 
