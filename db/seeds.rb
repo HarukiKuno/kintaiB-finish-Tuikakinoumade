@@ -25,6 +25,8 @@ User.create!(name:  "一般ユーザー",
              
              
              
+             
+             
 
 59.times do |n|
   name  = Faker::Name.name
