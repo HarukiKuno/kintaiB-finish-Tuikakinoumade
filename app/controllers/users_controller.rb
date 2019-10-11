@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html
       format.csv do
-        send_data render_to_string, filename: "勤務情報.csv", type: :csv
+        send_data render_to_string, filename: "#{@user.name}.csv", type: :csv
       end
     end
   end
