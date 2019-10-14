@@ -3,20 +3,22 @@
 
 <div class="col-md-10 col-md-offset-1">
     
-<table class="table table-hover" id="table-users">
+<table class="table" id="table-users">
     <% @users.each do |user| %>
     <tr>
-        <td><%= user.name %></br>
+      
+     
+        <td class="text-left"><%= user.name %></br>
         
         <% if current_user.admin? %>
-        |<%= link_to "削除", user, method: :delete, class: "btn btn-primary",
+        | <%= link_to "削除", user, method: :delete, class: "btn btn-primary",
                                             data: { confirm: "削除しますか？" } %></br>
 
 <div class="panel-group">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" href="#collapse<%= user.id %>"><button type="submit" class="btn btn-primary">編集</button></a>
+        <a data-toggle="collapse" href="#collapse<%= user.id %>"><button type="submit" style="WIDTH: 60px; HEIGHT: 40px" class="btn btn-primary">編集</button></a>
       </h4>
     </div>
     
