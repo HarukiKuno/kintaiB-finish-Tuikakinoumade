@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   
   
   resources :users do
+    collection { post :import }
     
     resources :attendances, only: :create
   end
