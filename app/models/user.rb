@@ -26,7 +26,7 @@ where(gender: gender)
   
   
   def self.import(file)
-    CSV.foreach(file.path, headers: true) do |row|
+    CSV.foreach(file.path, encoding: 'Shift_JIS:UTF-8', headers: true) do |row|
       # IDが見つかれば、レコードを呼び出し、見つかれなければ、新しく作成
       user = find_by(id: row["id"]) || new
       # CSVからデータを取得し、設定する
