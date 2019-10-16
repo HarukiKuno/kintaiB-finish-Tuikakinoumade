@@ -17,5 +17,8 @@ ja:
         basic_time: 指定勤務時間
         work_time: 基本勤務時間
         email: メールアドレス
+        employee_number: 社員番号
+        uid: カードID
+        affiliation: 所属
     errors:
     messages:
