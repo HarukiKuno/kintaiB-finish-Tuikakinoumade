@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'bases/index'
+
   root 'static_pages#home'
   get  '/signup',   to: 'users#new'
   get    '/login',  to: 'sessions#new'
@@ -15,6 +17,15 @@ Rails.application.routes.draw do
   get 'users/:id/edit_basic_info1', to: 'users#edit_basic_info1', as: :edit_basic_info1_user
   patch 'users/:id/update_basic_info1', to: 'users#update_basic_info1', as: :update_basic_info1_user
   
+  
+  #拠点
+  
+  get 'bases', to: 'bases#index'
+  get 'edit_base_info', to: 'bases#edit_base_info'
+  get '/new', to: 'bases#new'
+  post '/new', to: 'bases#create'
+  delete '/destroy', to: 'bases#destroy'
+  patch 'bases/update_base_info'
   
   resources :users do
     collection { post :import }
