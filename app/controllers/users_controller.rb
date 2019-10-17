@@ -104,9 +104,24 @@ class UsersController < ApplicationController
   end
   
   
+  
+  
+  
+  
   # 出勤社員一覧
   def syain
-    
+  @now_users = []
+    @now_users_employee_number = []
+    User.all.each do |user|
+      if user.attendances.any?{|day|
+         ( day.worked_on == Date.today &&
+           !day.started_at.blank? &&
+           day.finished_at.blank? )
+          }
+        @now_users.push(user.name)
+        @now_users_employee_number.push(user.employee_number)
+      end
+    end
   end
 
   private
