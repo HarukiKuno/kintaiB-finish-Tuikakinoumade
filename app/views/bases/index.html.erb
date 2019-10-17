@@ -10,10 +10,28 @@
            <td><b>拠点番号</b></td>
            <td><b>拠点名</b></td> 
            <td><b>拠点種類</b></td> 
-           
         </tr>
     </thead>
     
-    
-    
+    <tbody>
+        <% @bases.each do |base| %>
+        <tr>
+            <td><%= base.id %></td>
+            <td>
+                <% if current_user.admin? %>
+                <%= link_to "削除", destroy_path, method: :delete,
+                data: { confirm: "削除してもよろしいですか？" }, class: "btn btn-primary" %>
+                <% end %>
+            </td>
+            
+            <td><%= base.basenumber %></td>
+             <td><%= base.basename %></td>
+             <td><%= base.basetype %></td>
+        </tr>
+        <% end %>
+    </tbody>
 </table>
+
+<%= link_to "拠点情報の追加", edit_base_info_path , remote: true, class: "btn btn-primary" %>
+<!--モーダルウインドウ表示-->
+<div id="edit_base_info" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
