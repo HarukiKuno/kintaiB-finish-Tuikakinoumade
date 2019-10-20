@@ -27,7 +27,7 @@ class BasesController < ApplicationController
   def destroy
     @base = Base.find(params[:id])
     @base.destroy
-    flash[:success] = "#拠点{@base.name}のデータを削除しました。"
+    flash[:success] = "拠点【#{@base.basename}】のデータを削除しました。"
     redirect_to bases_url
   end
   
