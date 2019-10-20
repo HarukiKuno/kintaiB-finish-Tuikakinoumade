@@ -23,7 +23,10 @@ Rails.application.routes.draw do
   get 'bases', to: 'bases#index'
   get 'edit_base_info', to: 'bases#edit_base_info'
   get '/new', to: 'bases#new'
-  post '/new', to: 'bases#create'
+  
+  post "/bases" => "bases#create"
+  
+  
   delete '/destroy', to: 'bases#destroy'
   patch 'bases/update_base_info'
   
