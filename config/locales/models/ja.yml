@@ -25,12 +25,3 @@ ja:
         designated_work_end_time: 指定勤務終了時間
     errors:
     messages:
-    models:
-      base: 拠点
-    attributes:
-      base:
-        basenumber: 拠点番号
-        basename: 拠点名
-        basetype: 拠点種類
-        
-      
