@@ -40,6 +40,7 @@ class BasesController < ApplicationController
   def update
     @base = Base.find(params[:id])
     @base.update_attributes(base_params)
+    flash[:success] = '拠点情報を更新しました。'
     redirect_to request.referer
   end
   

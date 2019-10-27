@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   
   resources :bases 
   
-  patch 'bases/:id/', to: 'users#update', as: :demekin
+ 
   
   resources :users do
     collection { post :import }
