@@ -8,7 +8,11 @@ class BasesController < ApplicationController
   
   
   def new
+   if params[:id].present?
+   @base = Base.find(params[:id])
+   else
     @base = Base.new
+   end
   end
   
   
@@ -33,8 +37,10 @@ class BasesController < ApplicationController
   
   
   
-  def update_base_info
+  def update
+    @base = Base.find(params[:id])
     @base.update_attributes(base_params)
+    redirect_to request.referer
   end
   
   private

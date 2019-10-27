@@ -1,3 +1,5 @@
+
+
 <h1>拠点情報一覧</h1>
 
 
@@ -16,10 +18,10 @@
     <tbody>
         <% @bases.each do |base| %>
         <tr>
-            <td><%= link_to "編集", bases_update_base_info_path, remote: true, class: "btn btn-primary" %></td>
+            <td><%= link_to "編集", new_basis_path(id: base.id), remote: true, class: "btn btn-primary" %></td>
             <td>
                 <% if current_user.admin? %>
-                <%= link_to "削除", destroy_path(id: base.id), method: :delete,
+                <%= link_to "削除", base, method: :delete,
                 data: { confirm: "削除してもよろしいですか？" }, class: "btn btn-primary" %>
                 <% end %>
             </td>
@@ -32,7 +34,7 @@
     </tbody>
 </table>
 
-<%= link_to "拠点情報の追加", new_path, remote: true, class: "btn btn-primary" %>
+<%= link_to "拠点情報の追加", new_basis_path, remote: true, class: "btn btn-primary" %>
 <!--モーダルウインドウ表示-->
 
 

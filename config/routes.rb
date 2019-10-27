@@ -20,15 +20,9 @@ Rails.application.routes.draw do
   
   #拠点
   
-  get 'bases', to: 'bases#index'
-  get 'edit_base_info', to: 'bases#edit_base_info'
-  get '/new', to: 'bases#new'
+  resources :bases 
   
-  post "/bases" => "bases#create"
-  
-  
-  delete '/destroy', to: 'bases#destroy'
-  patch 'bases/update_base_info'
+  patch 'bases/:id/', to: 'users#update', as: :demekin
   
   resources :users do
     collection { post :import }
