@@ -9,13 +9,13 @@ User.create!(name:  "上長A",
              email: "serasu123@gmail.com",
              password:              "password",
              password_confirmation: "password",
-             admin: true)             
+             superior: true)             
              
 User.create!(name:  "上長B",
              email: "serasu1234@gmail.com",
              password:              "password",
              password_confirmation: "password",
-             admin: true)
+             superior: true)
              
              
 User.create!(name:  "一般ユーザー",
