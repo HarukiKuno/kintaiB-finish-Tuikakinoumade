@@ -1,6 +1,6 @@
 class AddSuperiorToUsers < ActiveRecord::Migration[5.1]
   def change
-    add_column :users, :superior, :boolean, default: false
+    remove_column :users, :superior, :boolean
 
   end
 end
